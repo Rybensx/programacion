@@ -1,31 +1,46 @@
 <?php
-
-
-
+// DEFINICION DE LA CLASE PRODUCTO
 class Producto{
     // DEFINICION DE ATRIBUTOS
-    public $precio = 2.56;
-    public $nombre = "nombre";
-    public $disponible = true;
+    public $precio;
+    public $nombre;
+    public $disponible;
 
-    //DEFINICION DE METODOS
+    // DEFINICION DE METODOS
 
-   public function mostrarNombrePdroducto(){
-        echo $this->nombre; 
+    public function mostrarNombreProducto() : void{
+        echo $this->nombre;
     }
-    
+
+    public function mostrarPrecioProducto() : void{
+        echo $this->precio;
+    }
+
 }
 
-    //CREACION DE UN OBJETO
+// CREACIÓN DE UN OBJETO
+// CREAR UNA INSTANCIA
+$mesa = new Producto(); 
 
-    $mesa = new Producto(); 
+$mesa->nombre = "Mesa";
+$mesa->precio = 500;
+$mesa->disponible = true;
 
-    $mesa->nombre = "Mesa";
+$silla = new Producto(); 
+
+$mesa->nombre = "Silla grande";
+$mesa->precio = 100;
+$mesa->disponible = false;
 
 
-    echo "<pre>";
-    var_dump($mesa);
-    echo "</pre>";
 
-   $mesa->mostrarNombrePdroducto();
+echo "<pre>";
+var_dump($mesa);
+echo "</pre>";
+echo "<pre>";
+var_dump($silla);
+echo "</pre>";
 
+$mesa->mostrarNombreProducto();
+$silla->mostrarNombreProducto();
+$mesa->mostrarPrecioProducto();
