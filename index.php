@@ -16,6 +16,13 @@ class Producto{
         echo $this->precio;
     }
 
+    public function mostrarDisponibilidad() : void {
+        if ($this->disponible) {
+            echo "El producto está disponible";
+        } else {
+            echo "El producto no está disponible";
+        }
+    }
 }
 
 // CREACIÓN DE UN OBJETO
@@ -28,11 +35,9 @@ $mesa->disponible = true;
 
 $silla = new Producto(); 
 
-$mesa->nombre = "Silla grande";
-$mesa->precio = 100;
-$mesa->disponible = false;
-
-
+$silla->nombre = "Silla grande";
+$silla->precio = 100;
+$silla->disponible = false;
 
 echo "<pre>";
 var_dump($mesa);
@@ -44,3 +49,6 @@ echo "</pre>";
 $mesa->mostrarNombreProducto();
 $silla->mostrarNombreProducto();
 $mesa->mostrarPrecioProducto();
+
+$mesa->mostrarDisponibilidad();
+$silla->mostrarDisponibilidad();
